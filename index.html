@@ -12,19 +12,51 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-     <style>
-        *{
-             font-family: "Geist", sans-serif
+    <style>
+        * {
+            font-family: "Geist", sans-serif
         }
-     </style>
+    </style>
     <title>Github Issue Tracker | Login</title>
 </head>
 
-<body>
-    <h1 class="">Github Issue Tracker</h1>
+<body class="bg-[##F8FAFC]">
+    <!-- login page -->
+    <section class="max-w-[500px] bg-[#FFFFFF] mx-auto rounded-md shadow-md border border-gray-200 my-20">
+        <!-- login header -->
+        <div class="text-center max-w-[450px] mx-auto">
+            <div class="pt-8">
+                <img class="mx-auto" src="assets/github-logo.png" alt="">
+            </div>
+            <h2 class="text-2xl font-semibold"> GitHub Iss ues Tracker</h2>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+
+        <!-- Form -->
+        <fieldset class="fieldset rounded-box  p-4 my-6 mx-auto max-w-[450px]">
+
+            <label class="label">Username</label>
+            <input  type="text" class="input w-full" placeholder="Enter Username" />
+            <p class="text-[#4A00FF]">Default: admin</p>
+            <label class="label">Password</label>
+            <input type="password" class="input w-full" placeholder="Enter Password" />
+            <p class="text-[#4A00FF]">Default: admin123</p>
+
+            <button class="btn btn-primary mt-4">Login</button>
+        </fieldset>
+
+        <!-- login footer -->
+        <div class="text-center pb-5 max-w-[450px] mx-auto">
+             <p class="text-[#1F2937] text-center mb-6">OR</p>
+             <p class="mb-4 text-[14px] text-[#64748B]">Demo Credentials:</p>
+             <p><span class="font-semibold">Username:</span> admin</p>
+             <p><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+
+    </section>
 </body>
 
 </html>
