@@ -28,8 +28,9 @@
     <title>Github Issue Tracker | Home</title>
 </head>
 
-<body>
-    <header class="max-w-11/12 mx-auto ">
+<body class="bg-[#F8FAFC]">
+    <!-- navbar -->
+    <header class="max-w-11/12 mx-auto mb-14">
         <div class="navbar bg-base-100 shadow-sm px-7 flex justify-between">
             <div class="">
                 <img class="w-12 max-sm:w-10" src="./assets/github-logo.png" alt="">
@@ -39,10 +40,68 @@
                     <i class="fa-brands fa-sistrix"></i>
                     <input class="max-sm:text-[10px]" type="search" required placeholder="Search" />
                 </label>
-                <button class="btn btn-primary max-sm:w-20 max-sm:text-[10px]"><i class="fa-solid fa-plus"></i> New Issue</button>
+                <button class="btn btn-primary max-sm:w-20 max-sm:text-[10px]"><i class="fa-solid fa-plus"></i> New
+                    Issue</button>
             </div>
         </div>
     </header>
+
+    <main>
+        <!-- filter section -->
+        <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto flex gap-3 py-4 pl-4 mb-5">
+            <button onclick="loadAllIssues()" class="btn sm:w-28 max-w-28 btn-primary">All</button>
+            <button class="btn sm:w-28 max-w-28">Open</button>
+            <button class="btn sm:w-28 max-w-28">Closed</button>
+        </section>
+
+        <!-- issues section -->
+        <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto  flex justify-between items-center px-5 py-3 border-b-black mb-1">
+            <div class="left">
+                <div class=" flex gap-2.5 items-center">
+                    <div class="img  rounded-full bg-[#4A00FF50] p-1.5">
+                        <img src="./assets/Aperture.png" alt="">
+                    </div>
+                    <div class="">
+                        <h2 class="text-xl font-semibold">50 Issues</h2>
+                        <p class="text-[#64748B]">Track and manage your project issues</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="flex gap-2.5">
+                    <div class="flex gap-1.5">
+                        <img src="./assets/Open-Status.png" alt="">
+                        <p>open</p>
+                    </div>
+                    <div class="flex gap-1.5">
+                        <img class="" src="./assets/Closed- Status .png" alt="">
+                        <p>Closed</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- cards section -->
+        <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto px-5 py-6">
+            <div id="all-cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                 <!-- <div class="card bg-base-100 shadow-2xl  border-t-4 border-t-green-700 p-4 space-y-3.5">
+                    <div class="flex justify-end"><div class="badge badge-soft badge-error">High</div></div>
+                    <h2 class="text-[14px] font-semibold">Fix navigation menu on mobile devices</h2>
+                    <p class="text-[12px] text-[#64748B] line-clamp-2">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+                    <div class="flex gap-1.5">
+                        <div class="badge badge-soft badge-error max-w-[50%]"><i class="fa-solid fa-bug"></i> <span class="text-[12px]">BUG</span></div>
+                        <div class="badge badge-soft badge-warning "><i class="fa-regular fa-life-ring"></i>  <span class="text-[12px]">HELP WANTED</span></div>
+                        
+                    </div>
+                    <p  class="text-[12px] text-[#64748B] ">#1by john_doe</p>
+                    <p  class="text-[12px] text-[#64748B] ">#1by john_doe</p>
+                </div> -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js/home.js"></script>
 </body>
 
 </html>
