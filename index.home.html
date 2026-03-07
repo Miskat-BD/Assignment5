@@ -35,13 +35,13 @@
             <div class="">
                 <img class="w-12 max-sm:w-10" src="./assets/github-logo.png" alt="">
             </div>
+            <!-- Search section -->
             <div class="flex gap-2">
                 <label class="input max-sm:w-20">
                     <i class="fa-brands fa-sistrix"></i>
-                    <input class="max-sm:text-[10px]" type="search" required placeholder="Search" />
+                    <input id="search-input" class="max-sm:text-[10px]" type="search" required placeholder="Search" />
                 </label>
-                <button class="btn btn-primary max-sm:w-20 max-sm:text-[10px]"><i class="fa-solid fa-plus"></i> New
-                    Issue</button>
+                <button id="search-btn" class="btn btn-primary max-sm:w-20 max-sm:text-[10px]">Search</button>
             </div>
         </div>
     </header>
@@ -49,9 +49,12 @@
     <main>
         <!-- filter section -->
         <section class="max-w-4/5 max-sm:max-w-11/12 bg-[#FFFFFF] shadow mx-auto flex gap-3 py-4 pl-4 mb-5">
-            <button id="all-filter-btn" onclick="loadAllIssues()" class="btn sm:w-28 max-w-28 btn-primary hover:bg-black hover:text-white">All</button>
-            <button id="open-filter-btn" onclick="loadOpenIssues()" class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Open</button>
-            <button id="closed-filter-btn" onclick="loadClosedIssues()" class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Closed</button>
+            <button id="all-filter-btn" onclick="loadAllIssues()"
+                class="btn sm:w-28 max-w-28 btn-primary hover:bg-black hover:text-white">All</button>
+            <button id="open-filter-btn" onclick="loadOpenIssues()"
+                class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Open</button>
+            <button id="closed-filter-btn" onclick="loadClosedIssues()"
+                class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Closed</button>
         </section>
 
         <!-- issues section -->
@@ -63,7 +66,8 @@
                         <img src="./assets/Aperture.png" alt="">
                     </div>
                     <div class="">
-                        <h2 class="text-xl max-sm:text-[16px] font-semibold"><span id="total-issue">50</span> Issues</h2>
+                        <h2 class="text-xl max-sm:text-[16px] font-semibold"><span id="total-issue">50</span> Issues
+                        </h2>
                         <p class="text-[#64748B] max-sm:text-[14px]">Track and manage your project issues</p>
                     </div>
 
@@ -107,9 +111,16 @@
             </div>
         </section>
     </main>
+
+    <!-- Modal section -->
+    <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+        
+    </section>
     <script src="script.js/home.js"></script>
-    
-    
+
+
 </body>
 
 </html>

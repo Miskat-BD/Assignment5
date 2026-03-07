@@ -5,6 +5,7 @@ const allFilterBtn = document.getElementById('all-filter-btn')
 const openFilterBtn = document.getElementById('open-filter-btn')
 const closedFilterBtn = document.getElementById('closed-filter-btn');
 let totalIssues = document.getElementById('total-issue');
+
 let count = 0;
 
 const createElement = (labels) => {
@@ -45,7 +46,7 @@ const displayAllIssues = (cardsData) => {
         card.innerHTML = `
         <div>   
                     
-                    <div class="flex justify-between mb-3.5">
+                    <div class="flex justify-between mb-3.5" >
                     <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
                     <div class="badge badge-soft badge-error">${element.priority}</div></div>
                     <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
@@ -61,7 +62,7 @@ const displayAllIssues = (cardsData) => {
         
         `;
         cardContainer.appendChild(card)
-       totalIssues.innerText = cardsData.length;
+        totalIssues.innerText = cardsData.length;
     });
 }
 
@@ -156,3 +157,19 @@ const displayClosedIssues = (cardsData) => {
 
     });
 }
+
+// Searching
+document.getElementById('search-btn').addEventListener('click', () => {
+    const input = document.getElementById('search-input');
+    const searchValue = input.value.trim().toLowerCase();
+    // console.log(searchValue)
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
+    .then(res => res.json())
+    .then(data => {
+       const allCards = data.data;
+    //    console.log(allCards)
+    const filterCards = allCards.filter(item => item.title.toLowerCase().includes(searchValue))
+    displayAllIssues(filterCards)
+    })
+})
+loadAllIssues()
