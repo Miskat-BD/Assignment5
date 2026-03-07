@@ -48,7 +48,7 @@
 
     <main>
         <!-- filter section -->
-        <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto flex gap-3 py-4 pl-4 mb-5">
+        <section class="max-w-4/5 max-sm:max-w-11/12 bg-[#FFFFFF] shadow mx-auto flex gap-3 py-4 pl-4 mb-5">
             <button id="all-filter-btn" onclick="loadAllIssues()" class="btn sm:w-28 max-w-28 btn-primary hover:bg-black hover:text-white">All</button>
             <button id="open-filter-btn" onclick="loadOpenIssues()" class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Open</button>
             <button id="closed-filter-btn" onclick="loadClosedIssues()" class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Closed</button>
@@ -56,28 +56,28 @@
 
         <!-- issues section -->
         <section
-            class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto  flex justify-between items-center px-5 py-3 border-b-black mb-1">
+            class="max-w-4/5 max-sm:max-w-11/12 bg-[#FFFFFF] shadow mx-auto  flex justify-between items-center px-5 py-3 border-b-black mb-1">
             <div class="left">
                 <div class=" flex gap-2.5 items-center">
                     <div class="img  rounded-full bg-[#4A00FF50] p-1.5">
                         <img src="./assets/Aperture.png" alt="">
                     </div>
                     <div class="">
-                        <h2 class="text-xl font-semibold"><span id="total-issue">50</span> Issues</h2>
-                        <p class="text-[#64748B]">Track and manage your project issues</p>
+                        <h2 class="text-xl max-sm:text-[16px] font-semibold"><span id="total-issue">50</span> Issues</h2>
+                        <p class="text-[#64748B] max-sm:text-[14px]">Track and manage your project issues</p>
                     </div>
 
                 </div>
             </div>
             <div class="right">
-                <div class="flex gap-2.5">
+                <div class="flex gap-5">
                     <div class="flex gap-1.5">
                         <img src="./assets/Open-Status.png" alt="">
-                        <p>open</p>
+                        <p class="max-sm:text-[12px]">open</p>
                     </div>
                     <div class="flex gap-1.5">
                         <img class="" src="./assets/Closed- Status .png" alt="">
-                        <p>Closed</p>
+                        <p class="max-sm:text-[12px]">Closed</p>
                     </div>
 
                 </div>
@@ -90,7 +90,7 @@
         </div>
 
         <!-- cards section -->
-        <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto px-5 py-6">
+        <section class="max-w-4/5 max-sm:max-w-11/12 bg-[#FFFFFF] shadow mx-auto px-5 py-6">
             <div id="all-cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-3">
                 <!-- <div class="card bg-base-100 shadow-2xl  border-t-4 border-t-green-700 p-4 space-y-3.5">
                     <div class="flex justify-end"><div class="badge badge-soft badge-error">High</div></div>
