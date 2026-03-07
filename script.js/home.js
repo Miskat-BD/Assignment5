@@ -10,8 +10,8 @@ let totalIssues = document.getElementById('total-issue');
 let count = 0;
 
 const createElement = (labels) => {
-    let label = labels.map(item => `<span class="badge badge-soft ${item == 'bug'? 'badge-error': item == 'help wanted' ? 'badge-warning' : 'badge-info'} text-[12px]">
-       ${item == 'bug'? `<i class="fa-solid fa-bug"></i>` : item == 'help wanted'? `<i class="fa-regular fa-life-ring"></i>`:`<i class="fa-solid fa-wand-magic-sparkles"></i>`} ${item.toUpperCase()}</span>`)
+    let label = labels.map(item => `<span class="badge badge-soft ${item == 'bug' ? 'badge-error' : item == 'help wanted' ? 'badge-warning' : 'badge-info'} text-[12px]">
+       ${item == 'bug' ? `<i class="fa-solid fa-bug"></i>` : item == 'help wanted' ? `<i class="fa-regular fa-life-ring"></i>` : `<i class="fa-solid fa-wand-magic-sparkles"></i>`} ${item.toUpperCase()}</span>`)
     return (label.join(" "));
 }
 // Loading Spinner
@@ -41,7 +41,7 @@ const displayModal = (data) => {
     modalDiv.innerHTML = `
         <h1 class="text-2xl font-bold mb-2.5">${data.title}</h1>
                 <div class="flex gap-2 items-center mb-6">
-                    <p class="${data.status == 'open' ? "bg-green-500":"bg-purple-500"} text-white text-[12px] py-1.5 px-2 rounded-2xl">${data.status == 'open'? "Opend" : "Closed"}</p>
+                    <p class="${data.status == 'open' ? "bg-green-500" : "bg-purple-500"} text-white text-[12px] py-1.5 px-2 rounded-2xl">${data.status == 'open' ? "Opend" : "Closed"}</p>
                     <p class="text-[#64748B] text-[12px]">Opened by <span>${data.author}</span></p>
                     <p class="text-[#64748B] text-[12px]">${data.createdAt}</p>
                 </div>
@@ -56,7 +56,7 @@ const displayModal = (data) => {
                     </div>
                     <div class="">
                         <h1 class="text-[#64748B]">Priority:</h1>
-                        <p class="font-bold text-center ${data.priority == 'high' ? "bg-red-500": data.priority == 'medium' ? "bg-amber-400" : "bg-gray-500"} text-white text-[12px] py-1 px-2 rounded-2xl">${data.priority.toUpperCase()}</p>
+                        <p class="font-bold text-center ${data.priority == 'high' ? "bg-red-500" : data.priority == 'medium' ? "bg-amber-400" : "bg-gray-500"} text-white text-[12px] py-1 px-2 rounded-2xl">${data.priority.toUpperCase()}</p>
                     </div>
                 </div>
     
@@ -92,7 +92,7 @@ const displayAllIssues = (cardsData) => {
                     
                     <div class="flex justify-between mb-3.5" >
                     <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
-                    <div class="badge badge-soft ${element.priority == 'high'?"badge-error": element.priority == 'medium'? "badge-warning" : "badge-neutral"}">${element.priority.toUpperCase()}</div></div>
+                    <div class="badge badge-soft ${element.priority == 'high' ? "badge-error" : element.priority == 'medium' ? "badge-warning" : "badge-neutral"}">${element.priority.toUpperCase()}</div></div>
                     <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
                     <p class="text-[12px] text-[#64748B] line-clamp-2">${element.description}</p>
                     <div class="flex gap-1.5">
@@ -136,7 +136,7 @@ const displayOpenIssues = (cardsData) => {
                     
                     <div class="flex justify-between mb-3.5">
                     <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
-                    <div class="badge badge-soft ${element.priority == 'high'?"badge-error": element.priority == 'medium'? "badge-warning" : "badge-neutral"}">${element.priority.toUpperCase()}</div></div>
+                    <div class="badge badge-soft ${element.priority == 'high' ? "badge-error" : element.priority == 'medium' ? "badge-warning" : "badge-neutral"}">${element.priority.toUpperCase()}</div></div>
                     <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
                     <p class="text-[12px] text-[#64748B] line-clamp-2">${element.description}</p>
                     <div class="flex gap-1.5">
@@ -182,7 +182,7 @@ const displayClosedIssues = (cardsData) => {
                     
                     <div class="flex justify-between mb-3.5">
                     <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
-                    <div class="badge badge-soft ${element.priority == 'high'?"badge-error": element.priority == 'medium'? "badge-warning" : "badge-neutral"}">${element.priority.toUpperCase()}</div></div>
+                    <div class="badge badge-soft ${element.priority == 'high' ? "badge-error" : element.priority == 'medium' ? "badge-warning" : "badge-neutral"}">${element.priority.toUpperCase()}</div></div>
                     <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
                     <p class="text-[12px] text-[#64748B] line-clamp-2">${element.description}</p>
                     <div class="flex gap-1.5">
