@@ -3,7 +3,8 @@ const cardContainer = document.getElementById('all-cards-container');
 const loadingSpinner = document.getElementById('loading-spinner');
 const allFilterBtn = document.getElementById('all-filter-btn')
 const openFilterBtn = document.getElementById('open-filter-btn')
-const closedFilterBtn = document.getElementById('closed-filter-btn')
+const closedFilterBtn = document.getElementById('closed-filter-btn');
+let totalIssues = document.getElementById('total-issue');
 let count = 0;
 
 const createElement = (labels) => {
@@ -34,6 +35,7 @@ const loadAllIssues = async () => {
 }
 
 const displayAllIssues = (cardsData) => {
+    totalIssues.innerText = ""
     cardContainer.innerHTML = "";
     cardsData.forEach(element => {
         count++;
@@ -59,7 +61,7 @@ const displayAllIssues = (cardsData) => {
         
         `;
         cardContainer.appendChild(card)
-
+       totalIssues.innerText = cardsData.length;
     });
 }
 
@@ -76,7 +78,9 @@ const loadOpenIssues = async () => {
 }
 
 const displayOpenIssues = (cardsData) => {
+    totalIssues.innerText = ""
     cardContainer.innerHTML = "";
+    totalOpen = cardsData.filter(item => item.status === 'open');
     cardsData.forEach(element => {
         // console.log(element)
         if (element.status === "open") {
@@ -101,6 +105,7 @@ const displayOpenIssues = (cardsData) => {
         
         `;
             cardContainer.appendChild(card)
+            totalIssues.innerText = totalOpen.length
         }
 
     });
@@ -119,7 +124,9 @@ const loadClosedIssues = async () => {
 }
 
 const displayClosedIssues = (cardsData) => {
+    totalIssues.innerText = ""
     cardContainer.innerHTML = "";
+    totalClosed = cardsData.filter(item => item.status === 'closed');
     cardsData.forEach(element => {
         // console.log(element)
         if (element.status === "closed") {
@@ -144,6 +151,7 @@ const displayClosedIssues = (cardsData) => {
         
         `;
             cardContainer.appendChild(card)
+            totalIssues.innerText = totalClosed.length;
         }
 
     });
