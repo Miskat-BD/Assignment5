@@ -2,6 +2,7 @@
 
 ### **1.What is the difference between var, let, and const?**
 We used these for variable declare in JS
+<br>
 Var: This is a old version of JS. the problem of var is scope issue.
 Example: var name = “Miskat”
 	    Var name =”Rahim”
