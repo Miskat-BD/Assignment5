@@ -11,7 +11,7 @@ let count = 0;
 
 const createElement = (labels) => {
     let label = labels.map(item => `<span class="badge badge-soft ${item == 'bug'? 'badge-error': item == 'help wanted' ? 'badge-warning' : 'badge-info'} text-[12px]">
-       ${item == 'bug'? `<i class="fa-solid fa-bug"></i>` : item == 'help wanted'? `<i class="fa-regular fa-life-ring"></i>`:`<i class="fa-solid fa-star-half-stroke"></i>`} ${item.toUpperCase()}</span>`)
+       ${item == 'bug'? `<i class="fa-solid fa-bug"></i>` : item == 'help wanted'? `<i class="fa-regular fa-life-ring"></i>`:`<i class="fa-solid fa-wand-magic-sparkles"></i>`} ${item.toUpperCase()}</span>`)
     return (label.join(" "));
 }
 // Loading Spinner
@@ -86,7 +86,7 @@ const displayAllIssues = (cardsData) => {
         count++;
         // console.log(element.id)
         const card = document.createElement('div');
-        card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
+        card.className = `card bg-base-100 shadow-2xl h-72 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
         card.innerHTML = `
         <div onclick="loadModal(${element.id})" class="cursor-pointer">   
                     
@@ -130,7 +130,7 @@ const displayOpenIssues = (cardsData) => {
         // console.log(element)
         if (element.status === "open") {
             const card = document.createElement('div');
-            card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
+            card.className = `card bg-base-100 shadow-2xl h-72 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
             card.innerHTML = `
         <div onclick="loadModal(${element.id})">   
                     
@@ -176,7 +176,7 @@ const displayClosedIssues = (cardsData) => {
         // console.log(element)
         if (element.status === "closed") {
             const card = document.createElement('div');
-            card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
+            card.className = `card bg-base-100 shadow-2xl h-72 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
             card.innerHTML = `
         <div onclick="loadModal(${element.id})">   
                     
