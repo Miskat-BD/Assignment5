@@ -10,7 +10,8 @@ let totalIssues = document.getElementById('total-issue');
 let count = 0;
 
 const createElement = (labels) => {
-    let label = labels.map(item => `<span class="text-[12px] bg-amber-300 p-1 rounded-xl">${item}</span>`)
+    let label = labels.map(item => `<span class="badge badge-soft ${item == 'bug'? 'badge-error': item == 'help wanted' ? 'badge-warning' : 'badge-info'} text-[12px]">
+       ${item == 'bug'? `<i class="fa-solid fa-bug"></i>` : item == 'help wanted'? `<i class="fa-regular fa-life-ring"></i>`:`<i class="fa-solid fa-star-half-stroke"></i>`} ${item.toUpperCase()}</span>`)
     return (label.join(" "));
 }
 // Loading Spinner
@@ -48,7 +49,7 @@ const displayModal = (data) => {
                     <div class="">${createElement(data.labels)}</div>
                 </div>
                 <p class="text-[#64748B] mb-7">${data.description}</p>
-                <div class="flex gap-20">
+                <div class="flex justify-between">
                     <div class="">
                         <h1 class="text-[#64748B]">Assignee:</h1>
                         <p class="font-bold">${data.assignee}</p>
