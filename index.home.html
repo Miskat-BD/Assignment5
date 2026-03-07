@@ -49,13 +49,14 @@
     <main>
         <!-- filter section -->
         <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto flex gap-3 py-4 pl-4 mb-5">
-            <button onclick="loadAllIssues()" class="btn sm:w-28 max-w-28 btn-primary">All</button>
-            <button class="btn sm:w-28 max-w-28">Open</button>
-            <button class="btn sm:w-28 max-w-28">Closed</button>
+            <button id="all-filter-btn" onclick="loadAllIssues()" class="btn sm:w-28 max-w-28 btn-primary hover:bg-black hover:text-white">All</button>
+            <button id="open-filter-btn" onclick="loadOpenIssues()" class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Open</button>
+            <button id="closed-filter-btn" onclick="loadClosedIssues()" class="btn sm:w-28 max-w-28 hover:bg-black hover:text-white">Closed</button>
         </section>
 
         <!-- issues section -->
-        <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto  flex justify-between items-center px-5 py-3 border-b-black mb-1">
+        <section
+            class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto  flex justify-between items-center px-5 py-3 border-b-black mb-1">
             <div class="left">
                 <div class=" flex gap-2.5 items-center">
                     <div class="img  rounded-full bg-[#4A00FF50] p-1.5">
@@ -84,14 +85,14 @@
         </section>
 
         <!-- Spinner section -->
-         <div id="loading-spinner" class="my-6 flex hidden justify-center max-w-4/5 mx-auto">
+        <div id="loading-spinner" class="my-6 flex hidden justify-center max-w-4/5 mx-auto">
             <span class="loading loading-spinner loading-xl"></span>
-         </div>
+        </div>
 
         <!-- cards section -->
         <section class="max-w-4/5 bg-[#FFFFFF] shadow mx-auto px-5 py-6">
             <div id="all-cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-3">
-                 <!-- <div class="card bg-base-100 shadow-2xl  border-t-4 border-t-green-700 p-4 space-y-3.5">
+                <!-- <div class="card bg-base-100 shadow-2xl  border-t-4 border-t-green-700 p-4 space-y-3.5">
                     <div class="flex justify-end"><div class="badge badge-soft badge-error">High</div></div>
                     <h2 class="text-[14px] font-semibold">Fix navigation menu on mobile devices</h2>
                     <p class="text-[12px] text-[#64748B] line-clamp-2">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
@@ -107,6 +108,8 @@
         </section>
     </main>
     <script src="script.js/home.js"></script>
+    
+    
 </body>
 
 </html>

@@ -1,11 +1,14 @@
 // console.log("Home connected")
 const cardContainer = document.getElementById('all-cards-container');
 const loadingSpinner = document.getElementById('loading-spinner');
+const allFilterBtn = document.getElementById('all-filter-btn')
+const openFilterBtn = document.getElementById('open-filter-btn')
+const closedFilterBtn = document.getElementById('closed-filter-btn')
 let count = 0;
 
-const createElement = (labels) =>{
-   let label = labels.map(item => `<span class="text-[12px] bg-amber-300 p-1 rounded-xl">${item}</span>`)
-   return (label.join(" "));
+const createElement = (labels) => {
+    let label = labels.map(item => `<span class="text-[12px] bg-amber-300 p-1 rounded-xl">${item}</span>`)
+    return (label.join(" "));
 }
 // Loading Spinner
 const showSpinner = () => {
@@ -19,6 +22,9 @@ const hideSpinner = () => {
 
 const loadAllIssues = async () => {
     showSpinner()
+    openFilterBtn.classList.remove("btn-primary")
+    closedFilterBtn.classList.remove("btn-primary")
+    allFilterBtn.classList.add("btn-primary")
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
     const res = await fetch(url);
     const data = await res.json();
@@ -33,10 +39,13 @@ const displayAllIssues = (cardsData) => {
         count++;
         // console.log(element)
         const card = document.createElement('div');
-        card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-red-700"} p-4 `;
+        card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
         card.innerHTML = `
-        <div>
-                    <div class="flex justify-end mb-3.5"><div class="badge badge-soft badge-error">${element.priority}</div></div>
+        <div>   
+                    
+                    <div class="flex justify-between mb-3.5">
+                    <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
+                    <div class="badge badge-soft badge-error">${element.priority}</div></div>
                     <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
                     <p class="text-[12px] text-[#64748B] line-clamp-2">${element.description}</p>
                     <div class="flex gap-1.5">
@@ -44,12 +53,98 @@ const displayAllIssues = (cardsData) => {
                         
                         
                     </div>
-                    <p  class="text-[12px] text-[#64748B] mb-3.5">${element.author}</p>
+                    <p  class="text-[12px] text-[#64748B] my-3.5"><span>#${element.id} by </span>${element.author}</p>
                     <p  class="text-[12px] text-[#64748B] ">${element.createdAt}</p>
                 </div> 
         
         `;
         cardContainer.appendChild(card)
+
+    });
+}
+
+const loadOpenIssues = async () => {
+    showSpinner()
+    openFilterBtn.classList.add("btn-primary")
+    closedFilterBtn.classList.remove("btn-primary")
+    allFilterBtn.classList.remove("btn-primary")
+    const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
+    const res = await fetch(url);
+    const data = await res.json();
+    displayOpenIssues(data.data)
+    hideSpinner()
+}
+
+const displayOpenIssues = (cardsData) => {
+    cardContainer.innerHTML = "";
+    cardsData.forEach(element => {
+        // console.log(element)
+        if (element.status === "open") {
+            const card = document.createElement('div');
+            card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
+            card.innerHTML = `
+        <div>   
+                    
+                    <div class="flex justify-between mb-3.5">
+                    <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
+                    <div class="badge badge-soft badge-error">${element.priority}</div></div>
+                    <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
+                    <p class="text-[12px] text-[#64748B] line-clamp-2">${element.description}</p>
+                    <div class="flex gap-1.5">
+                        <div class="">${createElement(element.labels)}</div>
+                        
+                        
+                    </div>
+                    <p  class="text-[12px] text-[#64748B] my-3.5"><span>#${element.id} by </span>${element.author}</p>
+                    <p  class="text-[12px] text-[#64748B] ">${element.createdAt}</p>
+                </div> 
+        
+        `;
+            cardContainer.appendChild(card)
+        }
+
+    });
+}
+
+const loadClosedIssues = async () => {
+    showSpinner()
+    openFilterBtn.classList.remove("btn-primary")
+    closedFilterBtn.classList.add("btn-primary")
+    allFilterBtn.classList.remove("btn-primary")
+    const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
+    const res = await fetch(url);
+    const data = await res.json();
+    displayClosedIssues(data.data)
+    hideSpinner()
+}
+
+const displayClosedIssues = (cardsData) => {
+    cardContainer.innerHTML = "";
+    cardsData.forEach(element => {
+        // console.log(element)
+        if (element.status === "closed") {
+            const card = document.createElement('div');
+            card.className = `card bg-base-100 shadow-2xl h-64 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
+            card.innerHTML = `
+        <div>   
+                    
+                    <div class="flex justify-between mb-3.5">
+                    <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
+                    <div class="badge badge-soft badge-error">${element.priority}</div></div>
+                    <h2 class="text-[14px] font-semibold mb-3.5">${element.title}</h2>
+                    <p class="text-[12px] text-[#64748B] line-clamp-2">${element.description}</p>
+                    <div class="flex gap-1.5">
+                        <div class="">${createElement(element.labels)}</div>
+                        
+                        
+                    </div>
+                    <p  class="text-[12px] text-[#64748B] my-3.5"><span>#${element.id} by </span>${element.author}</p>
+                    <p  class="text-[12px] text-[#64748B] ">${element.createdAt}</p>
+                </div> 
+        
+        `;
+            cardContainer.appendChild(card)
+        }
 
     });
 }
