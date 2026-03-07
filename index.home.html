@@ -31,9 +31,10 @@
 <body class="bg-[#F8FAFC]">
     <!-- navbar -->
     <header class="max-w-11/12 mx-auto mb-14">
-        <div class="navbar bg-base-100 shadow-sm px-7 flex justify-between">
-            <div class="">
+        <div class="navbar bg-base-100 shadow-sm flex justify-between">
+            <div class="flex gap-2 items-center">
                 <img class="w-12 max-sm:w-10" src="./assets/github-logo.png" alt="">
+                <h1 class="font-bold">GitHub Issues Tracker</h1>
             </div>
             <!-- Search section -->
             <div class="flex gap-2">
@@ -77,7 +78,7 @@
                 <div class="flex gap-5">
                     <div class="flex gap-1.5">
                         <img src="./assets/Open-Status.png" alt="">
-                        <p class="max-sm:text-[12px]">open</p>
+                        <p class="max-sm:text-[12px]">Open</p>
                     </div>
                     <div class="flex gap-1.5">
                         <img class="" src="./assets/Closed- Status .png" alt="">
@@ -95,29 +96,22 @@
 
         <!-- cards section -->
         <section class="max-w-4/5 max-sm:max-w-11/12 bg-[#FFFFFF] shadow mx-auto px-5 py-6">
-            <div id="all-cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-3">
-                <!-- <div class="card bg-base-100 shadow-2xl  border-t-4 border-t-green-700 p-4 space-y-3.5">
-                    <div class="flex justify-end"><div class="badge badge-soft badge-error">High</div></div>
-                    <h2 class="text-[14px] font-semibold">Fix navigation menu on mobile devices</h2>
-                    <p class="text-[12px] text-[#64748B] line-clamp-2">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
-                    <div class="flex gap-1.5">
-                        <div class="badge badge-soft badge-error max-w-[50%]"><i class="fa-solid fa-bug"></i> <span class="text-[12px]">BUG</span></div>
-                        <div class="badge badge-soft badge-warning "><i class="fa-regular fa-life-ring"></i>  <span class="text-[12px]">HELP WANTED</span></div>
-                        
-                    </div>
-                    <p  class="text-[12px] text-[#64748B] ">#1by john_doe</p>
-                    <p  class="text-[12px] text-[#64748B] ">#1by john_doe</p>
-                </div> -->
-            </div>
+            <div id="all-cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-3"></div>
         </section>
     </main>
 
     <!-- Modal section -->
-    <section>
-        <!-- Open the modal using ID.showModal() method -->
-        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-        
-    </section>
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <div class="" id="modal-container"></div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
     <script src="script.js/home.js"></script>
 
 
