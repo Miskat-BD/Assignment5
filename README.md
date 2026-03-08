@@ -25,3 +25,26 @@ const num = [1, 2, 3]; <br>
 const newNum = [...num, 4, 5]; <br>
 console.log(newNum)  —> [1, 2, 3, 4, 5] (this return new array) <br>
 
+<br>
+
+### **3.What is the difference between map(), filter(), and forEach()?**
+map(): Its can something and get new array <br>
+Example: const a = [1, 2, 3]  <br>
+	const  b = a.map(i => t * 2)   
+	console.log(b) -> [2, 4, 6]  
+filter(): It get new array depends on condition  <br>
+Example: const a = [1, 2, 3, 4, 5]  <br>
+	Const b = a.filter(i => i%2 === 0) 
+	console.log(b) -> [2, 4]   
+ <br>
+forEach: It is a type of loop. It works in array and it does not return new array  <br>
+Example: const a = [1, 2, 3, 4]  <br>
+	a.forEach(el => {  <br>
+		console.log(el)   <br>
+})  <br>
+Output:   <br>
+1  <br>
+2  <br>
+3  <br>
+4
+
