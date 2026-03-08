@@ -48,3 +48,23 @@ Output:   <br>
 3  <br>
 4
 
+
+<br>
+ 
+### **4. What is an arrow function?**
+Arrow function is a short function syntax <br>
+Example:  <br>
+Normal function: function add(num1, num2){ <br>
+		Const result = num1 + num2; 
+		Return result: 
+		} 
+ <br>
+Arrow function: const add = (num1 , num2) =>{ <br>
+		Const result = num1 + num2; <br>
+		Return result; <br>
+		} <br>
+Arrow function(shortest way) : const add = (num1, num2) => num1 + num2:  <br>
+This is automatically return the value;
+
+
+
