@@ -67,4 +67,15 @@ Arrow function(shortest way) : const add = (num1, num2) => num1 + num2:  <br>
 This is automatically return the value;
 
 
+<br>
+
+### **5. What are template literals?**
+Template literals can be used to use variables within strings. It is use with  backticks(``).  <br>
+Example: const name = ‘miskat’;  <br>
+	    Const age = 22;
+ <br>
+	console.log(`my name is ${name}, and i am ${age} years old`)
+ <br>  
+Output: my name is miskat, and i am 22 years old
+
 
