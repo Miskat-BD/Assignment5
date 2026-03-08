@@ -58,11 +58,11 @@ Normal function: function add(num1, num2){ <br>
 		Const result = num1 + num2; 
 		Return result: 
 		} 
- <br>
+ <br>  <br>
 Arrow function: const add = (num1 , num2) =>{ <br>
 		Const result = num1 + num2; <br>
 		Return result; <br>
-		} <br>
+		} <br>  <br>
 Arrow function(shortest way) : const add = (num1, num2) => num1 + num2:  <br>
 This is automatically return the value;
 
