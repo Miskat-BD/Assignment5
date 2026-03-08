@@ -7,7 +7,7 @@ document.getElementById('login-btn').addEventListener('click', () => {
 
     if (username === "admin" && password === "admin123") {
 
-        window.location.assign("index.home.html")
+        window.location.assign("home.html")
     }
     else {
         alert("Invalid username or password");

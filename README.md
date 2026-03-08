@@ -7,17 +7,16 @@ Var: This is a old version of JS. the problem of var is scope issue.
 Example: var name = “Miskat”
 	    Var name =”Rahim”
 <br>
-Let: We used it in maximum time. It is used in Modern JS. value can be changeable
+Let: We used it in maximum time. It is used in Modern JS. value can be changeable. <br>
 Example: let age = 10;
 age =20;  
 Let age = 15(it is error, does not declare again)
 <br>
-Const: This is the most important of JS. Value is declared ai the same time. Its value is constant.
-Example: const a = 10;
+Const: This is the most important of JS. Value is declared ai the same time. Its value is constant.<br>
+Example: const a = 10;<br>
 	 a = 5;(it is error, does not change the value)
 
 
-<br>
 <br>
 
 ### **2.What is the spread operator (...)?**

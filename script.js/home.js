@@ -132,7 +132,7 @@ const displayOpenIssues = (cardsData) => {
             const card = document.createElement('div');
             card.className = `card bg-base-100 shadow-2xl h-72 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
             card.innerHTML = `
-        <div onclick="loadModal(${element.id})">   
+        <div onclick="loadModal(${element.id})" class="cursor-pointer">   
                     
                     <div class="flex justify-between mb-3.5">
                     <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
@@ -178,7 +178,7 @@ const displayClosedIssues = (cardsData) => {
             const card = document.createElement('div');
             card.className = `card bg-base-100 shadow-2xl h-72 border-t-4 ${element.status == 'open' ? "border-t-green-700" : "border-t-purple-700"} p-4 `;
             card.innerHTML = `
-        <div onclick="loadModal(${element.id})">   
+        <div onclick="loadModal(${element.id})" class="cursor-pointer">   
                     
                     <div class="flex justify-between mb-3.5">
                     <p>${element.status == 'open' ? `<img src="assets/Open-Status.png"></img>` : `<img src="assets/Closed- Status .png" alt="">`}</p>
