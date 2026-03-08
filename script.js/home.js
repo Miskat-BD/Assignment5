@@ -34,7 +34,7 @@ const loadModal = async (id) => {
 
 const displayModal = (data) => {
     const modal = document.getElementById('my_modal_1')
-    console.log(data)
+    // console.log(data)
     modal.showModal()
     const modalDiv = document.createElement('div');
     modalContainer.innerHTML = "";
