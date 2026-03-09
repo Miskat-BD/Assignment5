@@ -205,6 +205,7 @@ const displayClosedIssues = (cardsData) => {
 // Searching
 document.getElementById('search-btn').addEventListener('click', () => {
     const input = document.getElementById('search-input');
+    
     const searchValue = input.value.trim().toLowerCase();
     // console.log(searchValue)
     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
@@ -214,6 +215,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
             //    console.log(allCards)
             const filterCards = allCards.filter(item => item.title.toLowerCase().includes(searchValue))
             displayAllIssues(filterCards)
+            input.value = "";
         })
 })
 loadAllIssues()
